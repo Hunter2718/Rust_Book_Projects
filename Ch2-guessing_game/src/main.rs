@@ -18,7 +18,10 @@ fn main() {
 
         let guess: u32 = match guess.trim().parse() {
             Ok(num) => num,
-            Err(_) => continue,
+            Err(_) => {
+                print!("Please input a number\n");
+                continue;
+            }
         };
 
         match guess.cmp(&goal_number) {
